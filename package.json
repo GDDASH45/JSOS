@@ -1,0 +1,37 @@
+
+{
+    "name": "electron-desktop",
+    "version": "0.1.0",
+    "description": "A JavaScript desktop operating system",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "build": "electron-builder --linux"
+    },
+    "devDependencies": {
+        "electron": "^39.0.0",
+        "electron-builder": "^26.0.0"
+    },
+    "build": {
+        "appId": "org.example.desktop",
+        "productName": "Desktop OS",
+        "directories": {
+            "output": "build"
+        },
+        "files": [
+            "**/*",
+            "!node_modules/**/*",
+            "!build/**/*",
+            "!.git/**/*",
+            "!Makefile",
+            "!.gitignore"
+        ],
+        "linux": {
+            "target": [
+                "AppImage",
+                "deb"
+            ],
+            "category": "Utility"
+        }
+    }
+}
